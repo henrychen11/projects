@@ -9635,7 +9635,7 @@ var Calculator = function (_React$Component) {
       num2: ''
     };
     _this.setNum1 = _this.setNum1.bind(_this);
-
+    _this.setNum2 = _this.setNum2.bind(_this);
     return _this;
   }
 
@@ -9657,7 +9657,9 @@ var Calculator = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.state.num1);
+      var _this2 = this;
+
+      console.log(this.state.num2);
       return _react2.default.createElement(
         'div',
         null,
@@ -9669,6 +9671,7 @@ var Calculator = function (_React$Component) {
             value: this.state.num1,
             onChange: this.setNum1 })
         ),
+        _react2.default.createElement('br', null),
         _react2.default.createElement(
           'label',
           null,
@@ -9677,7 +9680,36 @@ var Calculator = function (_React$Component) {
             value: this.state.num2,
             onChange: this.setNum2 })
         ),
-        _react2.default.createElement('button', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.setState({ result: parseInt(_this2.state.num1) + parseInt(_this2.state.num2) });
+            } },
+          '+'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.setState({ result: parseInt(_this2.state.num1) - parseInt(_this2.state.num2) });
+            } },
+          '-'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.setState({ result: parseInt(_this2.state.num1) * parseInt(_this2.state.num2) });
+            } },
+          '*'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.setState({ result: parseInt(_this2.state.num1) / parseInt(_this2.state.num2) });
+            } },
+          '/'
+        ),
+        _react2.default.createElement('br', null),
         _react2.default.createElement(
           'h3',
           null,
