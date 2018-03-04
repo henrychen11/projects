@@ -1,7 +1,5 @@
 import React from 'react';
 
-const API_KEY = '214b015c675c795513e0c7ebd3c9d242';
-
 export default class SearchBar extends React.Component {
     constructor(props){
         super(props);
@@ -17,9 +15,11 @@ export default class SearchBar extends React.Component {
 
     onFormSubmit(event){
         event.preventDefault();
+        this.props.fetchWeather(this.state.term);
+        this.setState({ term: '' });
     }
     render(){
-        console.log(this.state);
+        
         return (
             <form onSubmit={this.onFormSubmit.bind(this)} className="input-group">
                 <input
