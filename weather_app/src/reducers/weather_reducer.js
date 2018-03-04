@@ -1,7 +1,7 @@
 import { FETCH_WEATHER } from '../actions/search_bar_actions';
 
+
 const weatherReducer = (state = [], action) => {
-    
     switch(action.type){
         case FETCH_WEATHER:
             return state.concat([ action.payload.data ]);
